@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" type="image/JPEG" href="images/mig1.png">
+    <title>UCOnline</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="locationStyle.css">
+</head>
+<body>
+
+<section class="container content-section col-md-10 col-xm-4 ">
+  <header class="main-header">
+    <hr>
+            <h1 class="band-name band-name-large" style="font-size: 6.5vw;">UCOnline</h1>   
+</nav>
+</header>
+</section>
+
+
+<script type="text/javascript">console.log(localStorage.getItem("name"));</script>
+<script type="text/javascript">console.log(localStorage.getItem("kioko"));</script>
+
+
+
+<section class="container content-section col-md-10 col-xm-4 ">
+  <h2 class="formhead">User Sign up</h2>
+<form class="needs-validation" onsubmit="return required()" 
+ENCTYPE="multipart/form-data" method = "post" action = "regUser.php"  novalidate>
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="validationCustom01">Name</label>
+      <input type="text" class="form-control" name = "name" id="validationCustom01" placeholder="Name"  required>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="validationCustom02">Password</label>
+      <input type="password" class="form-control" name="passowrd" id="validationCustom02" required>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="validationCustom02">Confirm Password</label>
+      <input type="password" class="form-control" name="cpassowrd" id="validationCustom02" required>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <label for="validationCustom03">Age</label>
+      <input type="number" class="form-control" name="age" id="validationCustom03" 
+      placeholder="Age" required>
+      <div class="invalid-feedback">
+        Please provide a valid age.
+      </div>
+    </div>
+    <div class="col-md-3 mb-3">
+      <label for="gender">Gender</label>
+
+      <select class="form-control" name ="gender" id="validationCustom04"placeholder="Gender" required>
+        <option value="female">Female</option>
+        <option value="male">Male</option>
+      </select>
+      <div class="invalid-feedback">
+        Please provide a valid gender.
+      </div>
+    </div>
+    <div class="col-md-3 mb-3">
+      <label for="validationCustom05">
+       Place of Origin
+      </label>
+      <input type="text" class="form-control" name="origin" id="validationCustom05" placeholder="" required>
+      <div class="invalid-feedback">
+        Please provide a valid Place of Origin.
+      </div>
+    </div>
+  </div>
+      
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+  <button class="btn btn-success" type="submit" name="submit">Submit form</button>
+</form>
+</section>
+
+<script>
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+</script>
+
+  
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script>// Sass map from `_variables.scss`
+// Override this and recompile your Sass to generate different states
+$form-validation-states: map-merge(
+  (
+    "valid": (
+      "color": $form-feedback-valid-color,
+      "icon": $form-feedback-icon-valid
+    ),
+    "invalid": (
+      "color": $form-feedback-invalid-color,
+      "icon": $form-feedback-icon-invalid
+    )
+  ),
+  $form-validation-states
+);
+
+// Loop from `_forms.scss`
+// Any modifications to the above Sass map will be reflected in your compiled
+// CSS via this loop.
+@each $state, $data in $form-validation-states {
+@include form-validation-state($state, map-get($data, color), map-get($data, icon));
+}
+</script>
+
+
+</body>
+</html>
